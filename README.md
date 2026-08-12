@@ -98,7 +98,7 @@ Rendering is enabled by default.
 
 ## Sizing behavior
 
-Every formula starts at the same base scale: `0.50 × terminal cell height` pixels per MathJax `ex`.
+Every formula starts at the same base scale: `0.40 × terminal cell height` pixels per MathJax `ex`.
 
 - Formulas that fit use that scale unchanged.
 - Formulas are never enlarged to fill available space.

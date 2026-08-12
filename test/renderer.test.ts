@@ -36,7 +36,7 @@ test("rasterizes LaTeX through MathJax SVG", async () => {
   assert.ok(isPng(result.base64Data));
   assert.equal(result.widthPx, result.columns * layout.cellWidthPx * 2);
   assert.equal(result.heightPx, result.rows * layout.cellHeightPx * 2);
-  assert.equal(result.pixelsPerEx, layout.cellHeightPx * 0.5);
+  assert.equal(result.pixelsPerEx, layout.cellHeightPx * 0.4);
   assert.equal(result.deviceScale, 2);
   assertTransparentBleed(result);
 });
@@ -53,7 +53,7 @@ test("uses one fixed font scale for every formula", async () => {
   assert.ok(rasters.every(Boolean));
   assert.deepEqual(
     rasters.map((raster) => raster!.pixelsPerEx),
-    Array.from({ length: formulas.length }, () => layout.cellHeightPx * 0.5),
+    Array.from({ length: formulas.length }, () => layout.cellHeightPx * 0.4),
   );
 });
 
@@ -66,7 +66,7 @@ test("uses the smallest width-only shrink needed for oversized formulas", async 
   assert.ok(narrow);
   assert.equal(narrow.columns, 8);
   assert.ok(narrow.pixelsPerEx < medium.pixelsPerEx);
-  assert.ok(medium.pixelsPerEx <= layout.cellHeightPx * 0.5);
+  assert.ok(medium.pixelsPerEx <= layout.cellHeightPx * 0.4);
   assert.equal(narrow.widthPx, 8 * layout.cellWidthPx * 2);
 });
 
@@ -79,7 +79,7 @@ test("fits embedded inline formulas into one row without distortion", async () =
   });
   assert.ok(result);
   assert.equal(result.rows, 1);
-  assert.ok(result.pixelsPerEx < layout.cellHeightPx * 0.5);
+  assert.ok(result.pixelsPerEx < layout.cellHeightPx * 0.4);
   assertTransparentBleed(result);
 });
 

@@ -48,7 +48,7 @@ The Markdown patch temporarily replaces the component's internal text only durin
 The natural display scale is:
 
 ```text
-basePixelsPerEx = terminalCellHeightPx × 0.50
+basePixelsPerEx = terminalCellHeightPx × 0.40
 ```
 
 Formula complexity does not influence this value. Superscripts, limits, and other TeX style levels may be smaller because MathJax defines them relative to the same base style.
